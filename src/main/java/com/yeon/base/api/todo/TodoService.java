@@ -38,10 +38,7 @@ public class TodoService {
 
   @Transactional(readOnly = true)
   public List<TodoDTO> search(final String keyword) {
-    return this.todoRepository
-        .findByTodoContaining(keyword)
-        .map(TodoDTO::new)
-        .toList();
+    return this.todoRepository.findByTodoContaining(keyword).map(TodoDTO::new).toList();
   }
 
   @Transactional
