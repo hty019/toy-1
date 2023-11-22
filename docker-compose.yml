@@ -1,0 +1,11 @@
+version: '2'
+services:
+  ayaan-mysql:
+    image: mysql
+    container_name: lap
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+    volumes:
+      - ./config/sql/:/docker-entrypoint-initdb.d/
+    ports:
+      - 3306:3306
